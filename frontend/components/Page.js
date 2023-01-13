@@ -19,7 +19,7 @@ const StyledPage = styled.div`
 
 const Inner = styled.div`
   max-width: ${(props) => props.theme.maxWidth};
-  background-color: ${(props) => props.theme.red};
+  /* background-color: ${(props) => props.theme.red}; */
   margin: 0 auto;
   padding: 2rem;
 `;
@@ -32,6 +32,15 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
   html {
+    --red: #ff0000;
+    --black: #393939;
+    --grey: #3A3A3A;
+    --gray: var(--grey);
+    --lightGrey: #e1e1e1;
+    --lightGray: var(--lightGrey);
+    --offWhite: #ededed;
+    --maxWidth: 1000px;
+    --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
     box-sizing: border-box;
     font-size: 10px;
   }
@@ -39,15 +48,21 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
+    font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
-    line-height: 2;
-    font-family: 'radnika_next';
+    line-height:2;
   }
   a {
     text-decoration: none;
-    color: ${(props) => props.theme.black};
+    color: var(--black);
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  button {
+    font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 `;
 
@@ -55,7 +70,7 @@ class Page extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <GlobalStyle/>
+        <GlobalStyle />
         <StyledPage>
           <Header />
           <Inner>{this.props.children}</Inner>
