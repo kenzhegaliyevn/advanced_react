@@ -1,11 +1,9 @@
 import CreateProduct from '../components/CreateProduct';
 
-const Sell = () => {
+export default function SellPage() {
   return (
     <div>
       <CreateProduct />
     </div>
   );
-};
-
-export default Sell;
+}
