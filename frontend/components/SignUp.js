@@ -45,7 +45,7 @@ export default function SignUp() {
     <Form method='POST' onSubmit={handleSubmit}>
       <h2>Sign Up for an account</h2>
       <DisplayError error={error} />
-      <fieldset>
+      <fieldset disabled={loading} aria-busy={loading}>
         <label htmlFor='name'>
           Name
           <input

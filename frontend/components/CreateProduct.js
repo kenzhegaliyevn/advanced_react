@@ -40,8 +40,6 @@ export default function CreateProduct() {
     }
   );
 
-  console.log(createProduct);
-
   return (
     <Form
       onSubmit={async (e) => {
